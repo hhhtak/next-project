@@ -1,3 +1,4 @@
 {
-  "extends": "next/core-web-vitals"
+  // ESLintとPrettierのコード整形がバッティングしないよう
+  "extends": ["next", "next/core-web-vitals", "prettier"]
 }
