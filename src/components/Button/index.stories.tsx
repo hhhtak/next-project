@@ -1,41 +1,59 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, Meta } from '@storybook/react'
 
-import { Button } from '@components/Button/index'
+import { Button, ButtonProps } from './index'
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Example/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    label: { defaultValue: 'Button' },
   },
-} as ComponentMeta<typeof Button>
+} as Meta
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
+  children: 'foo',
+  size: 'large',
   primary: true,
-  label: 'Button',
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-  label: 'Button',
+  children: 'Children coming from story args!',
+  primary: false,
 }
 
-export const Large = Template.bind({})
-Large.args = {
-  size: 'large',
-  label: 'Button',
+const getCaptionForLocale = (locale: string) => {
+  switch (locale) {
+    case 'es':
+      return 'Hola!'
+    case 'fr':
+      return 'Bonjour!'
+    case 'kr':
+      return '안녕하세요!'
+    case 'pt':
+      return 'Olá!'
+    default:
+      return 'Hello!'
+  }
 }
 
-export const Small = Template.bind({})
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const StoryWithLocale: Story = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale)
+  return <Button>{caption}</Button>
 }
+
+export const StoryWithParamsAndDecorator: Story<ButtonProps> = (args) => {
+  return <Button {...args} />
+}
+StoryWithParamsAndDecorator.args = {
+  children: 'foo',
+}
+StoryWithParamsAndDecorator.parameters = {
+  layout: 'centered',
+}
+StoryWithParamsAndDecorator.decorators = [(StoryFn) => <StoryFn />]
