@@ -11,7 +11,7 @@ test('renders primary button with default args', () => {
   expect(buttonElement).not.toBeNull()
 })
 
-test('renders primary button with overriden props', () => {
+test('renders primary button with overridden props', () => {
   render(<Primary>Hello world</Primary>) // you can override props and they will get merged with values from the Story's args
   const buttonElement = screen.getByText(/Hello world/i)
   expect(buttonElement).not.toBeNull()
