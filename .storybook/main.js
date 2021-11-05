@@ -11,12 +11,4 @@ module.exports = {
     }
     return config
   },
-  // paths: {
-  //   '@components/*': ['../src/components/*'],
-  // },
-  // resolve: {
-  //   alias: {
-  //     '@components': path.join(__dirname, '../src/components/*'),
-  //   },
-  // },
 }

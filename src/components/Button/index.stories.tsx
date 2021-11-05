@@ -1,4 +1,3 @@
-import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { Button, ButtonProps } from './index'
@@ -16,7 +15,7 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  children: 'foo',
+  children: 'foofoo',
   size: 'large',
   primary: true,
 }
@@ -44,14 +43,14 @@ const getCaptionForLocale = (locale: string) => {
 
 export const StoryWithLocale: Story = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale)
-  return <Button>{caption}</Button>
+  return <Button {...args}>{caption}</Button>
 }
 
 export const StoryWithParamsAndDecorator: Story<ButtonProps> = (args) => {
   return <Button {...args} />
 }
 StoryWithParamsAndDecorator.args = {
-  children: 'foo',
+  children: 'foo2',
 }
 StoryWithParamsAndDecorator.parameters = {
   layout: 'centered',

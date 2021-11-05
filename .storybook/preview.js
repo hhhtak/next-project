@@ -6,4 +6,5 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  globals: { locale: 'fr' },
 }
