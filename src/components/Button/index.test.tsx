@@ -16,3 +16,9 @@ test('renders primary button with overridden props', () => {
   const buttonElement = screen.getByText(/Hello world/i)
   expect(buttonElement).not.toBeNull()
 })
+
+test('Secondary', () => {
+  const { container } = render(<Secondary />)
+  const buttonElement = screen.getByRole('button')
+  expect(buttonElement.textContent).toEqual(Secondary.args?.children)
+})

@@ -23,7 +23,6 @@ Primary.args = {
 export const Secondary = Template.bind({})
 Secondary.args = {
   children: 'Children coming from story args!',
-  primary: false,
 }
 
 const getCaptionForLocale = (locale: string) => {
