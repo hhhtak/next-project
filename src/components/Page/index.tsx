@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Header } from '@components/Header'
-import '@components/Page/page.css'
+import { Header } from '@components/organisms/Header'
+import '@components/Page/index.css'
 
 interface PageProps {
   user?: {}

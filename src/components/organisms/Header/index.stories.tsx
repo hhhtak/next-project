@@ -1,10 +1,10 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Header } from '@components/Header'
+import { Header } from '@components/organisms/Header'
 
 export default {
-  title: 'Example/Header',
+  title: 'organisms/Header',
   component: Header,
 } as ComponentMeta<typeof Header>
 
