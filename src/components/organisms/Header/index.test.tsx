@@ -5,9 +5,13 @@ import * as stories from '@components/organisms/Header/index.stories'
 const { LoggedIn, LoggedOut } = composeStories(stories)
 
 test('LoggedIn storybook test', () => {
-  render(<LoggedIn />)
+  const { getByText } = render(<LoggedIn />)
+  const text = getByText('Log out')
+  expect(text).not.toBeNull()
 })
 
 test('LoggedOut storybook test', () => {
-  render(<LoggedOut />)
+  const { getByText } = render(<LoggedOut />)
+  const text = getByText('Log in')
+  expect(text).not.toBeNull()
 })
