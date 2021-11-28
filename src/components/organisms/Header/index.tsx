@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Button } from '@components/atoms/Button'
-import '@components/atoms/Button/index.css'
+import '@components/atoms/Button/index.module.css'
 
 interface HeaderProps {
   user?: {}

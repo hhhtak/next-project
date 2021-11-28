@@ -1,5 +1,5 @@
 import React from 'react'
-import '@components/atoms/Button/index.css'
+import '@components/atoms/Button/index.module.css'
 
 export interface ButtonProps {
   primary?: boolean
