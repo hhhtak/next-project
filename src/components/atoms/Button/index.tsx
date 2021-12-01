@@ -15,16 +15,15 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = (props) => {
   const { primary = false, size = 'medium', backgroundColor, children, ...otherProps } = props
 
-  const getButtonSize = (size: string) => {
+  const setButtonSizeStyles = (size: string) => {
     switch (size) {
       case 'small':
         return `font-size: 12px; padding: 10px 16px;`
       case 'medium':
+      default:
         return `font-size: 14px; padding: 11px 20px;`
       case 'large':
         return `font-size: 16px; padding: 12px 24px;`
-      default:
-        return ``
     }
   }
 
@@ -39,7 +38,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     color: ${primary ? 'white' : '#333'};
     background-color: ${primary ? '#1ea7fd' : 'transparent'};
     box-shadow: ${primary ? 'none' : 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset'};
-    ${getButtonSize(size)}
+    ${setButtonSizeStyles(size)}
   `
 
   return (
