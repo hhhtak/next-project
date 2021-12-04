@@ -1,11 +1,12 @@
 import styled from 'styled-components/macro'
 
-interface Props {
+type ButtonSize = 'small' | 'medium' | 'large'
+type Props = {
   primary: boolean
-  size: 'small' | 'medium' | 'large'
+  size: ButtonSize
 }
 
-const setButtonSizeStyles = (size: string) => {
+const setButtonSizeStyles = (size: ButtonSize) => {
   switch (size) {
     case 'small':
       return `font-size: 12px; padding: 10px 16px;`

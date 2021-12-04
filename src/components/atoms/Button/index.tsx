@@ -1,7 +1,7 @@
 import React from 'react'
 import { styledButton } from '@components/atoms/Button/styled'
 
-export interface ButtonProps {
+export type ButtonProps = {
   primary?: boolean
   backgroundColor?: string
   size?: 'small' | 'medium' | 'large'
