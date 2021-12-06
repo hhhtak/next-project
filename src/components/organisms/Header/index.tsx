@@ -1,8 +1,13 @@
 import React from 'react'
-import styled from 'styled-components/macro'
-
+import {
+  StyledCustomButton,
+  StyledH1,
+  StyledWrapper,
+  StyledSvg,
+} from '@components/organisms/Header/styled'
 import { Button } from '@components/atoms/Button'
-interface HeaderProps {
+
+type HeaderProps = {
   user?: {}
   onLogin: () => void
   onLogout: () => void
@@ -12,35 +17,11 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = (props) => {
   const { user, onLogin, onLogout, onCreateAccount } = props
 
-  const Wrapper = styled.div`
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  `
-  const Svg = styled.svg`
-    display: inline-block;
-    vertical-align: top;
-  `
-  const H1 = styled.h1`
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 1;
-    margin: 6px 0 6px 10px;
-    display: inline-block;
-    vertical-align: top;
-  `
-  const CustomButton = styled(Button)`
-    margin-left: 10px;
-  `
-
   return (
     <header>
-      <Wrapper>
+      <StyledWrapper>
         <div>
-          <Svg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'>
+          <StyledSvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'>
             <g fill='none' fillRule='evenodd'>
               <path
                 d='M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z'
@@ -55,8 +36,8 @@ export const Header: React.FC<HeaderProps> = (props) => {
                 fill='#91BAF8'
               />
             </g>
-          </Svg>
-          <H1>Acme</H1>
+          </StyledSvg>
+          <StyledH1>Acme</StyledH1>
         </div>
         <div>
           {user ? (
@@ -68,13 +49,13 @@ export const Header: React.FC<HeaderProps> = (props) => {
               <Button size='small' onClick={onLogin}>
                 Log in
               </Button>
-              <CustomButton primary size='small' onClick={onCreateAccount}>
+              <StyledCustomButton primary size='small' onClick={onCreateAccount}>
                 Sign up
-              </CustomButton>
+              </StyledCustomButton>
             </>
           )}
         </div>
-      </Wrapper>
+      </StyledWrapper>
     </header>
   )
 }

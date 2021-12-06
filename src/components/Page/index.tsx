@@ -1,8 +1,8 @@
 import React from 'react'
-import styled from 'styled-components/macro'
+import { StyledSection, StyledH2, StyledTip, StyledTipWrapper } from '@components/Page/styled'
 import { Header } from '@components/organisms/Header'
 
-interface PageProps {
+type PageProps = {
   user?: {}
   onLogin: () => void
   onLogout: () => void
@@ -12,76 +12,12 @@ interface PageProps {
 export const Page: React.FC<PageProps> = (props: PageProps) => {
   const { user, onLogin, onLogout, onCreateAccount } = props
 
-  const Section = styled.section`
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    padding: 48px 20px;
-    margin: 0 auto;
-    max-width: 600px;
-    color: #333;
-    & p {
-      margin: 1em 0;
-    }
-
-    & a {
-      text-decoration: none;
-      color: #1ea7fd;
-    }
-
-    & ul {
-      padding-left: 30px;
-      margin: 1em 0;
-    }
-
-    & li {
-      margin-bottom: 8px;
-    }
-  `
-  const H2 = styled.h2`
-    font-weight: 900;
-    font-size: 32px;
-    line-height: 1;
-    margin: 0 0 4px;
-    display: inline-block;
-    vertical-align: top;
-  `
-  const Tip = styled.span`
-    display: inline-block;
-    border-radius: 1em;
-    font-size: 11px;
-    line-height: 12px;
-    font-weight: 700;
-    background: #e7fdd8;
-    color: #66bf3c;
-    padding: 4px 12px;
-    margin-right: 10px;
-    vertical-align: top;
-  `
-  const TipWrapper = styled.div`
-    font-size: 13px;
-    line-height: 20px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    & svg {
-      display: inline-block;
-      height: 12px;
-      width: 12px;
-      margin-right: 4px;
-      vertical-align: top;
-      margin-top: 3px;
-    }
-    & svg path {
-      fill: #1ea7fd;
-    }
-  `
-
   return (
     <article>
       <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />
 
-      <Section>
-        <H2>Pages in Storybook</H2>
+      <StyledSection>
+        <StyledH2>Pages in Storybook</StyledH2>
         <p>
           We recommend building UIs with a{' '}
           <a href='https://componentdriven.org' target='_blank' rel='noopener noreferrer'>
@@ -115,8 +51,8 @@ export const Page: React.FC<PageProps> = (props: PageProps) => {
           </a>
           .
         </p>
-        <TipWrapper>
-          <Tip>Tip</Tip> Adjust the width of the canvas with the{' '}
+        <StyledTipWrapper>
+          <StyledTip>Tip</StyledTip> Adjust the width of the canvas with the{' '}
           <svg width='10' height='10' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'>
             <g fill='none' fillRule='evenodd'>
               <path
@@ -127,8 +63,8 @@ export const Page: React.FC<PageProps> = (props: PageProps) => {
             </g>
           </svg>
           Viewports addon in the toolbar
-        </TipWrapper>
-      </Section>
+        </StyledTipWrapper>
+      </StyledSection>
     </article>
   )
 }
