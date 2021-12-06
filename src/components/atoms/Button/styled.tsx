@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-type ButtonSize = 'small' | 'medium' | 'large'
+export type ButtonSize = 'small' | 'medium' | 'large'
 type Props = {
   primary: boolean
   size: ButtonSize
@@ -18,7 +18,7 @@ const setButtonSizeStyles = (size: ButtonSize) => {
   }
 }
 
-export const styledButton = (props: Props) => styled.button`
+export const StyledButton = styled.button<Props>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
@@ -26,8 +26,8 @@ export const styledButton = (props: Props) => styled.button`
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  color: ${props.primary ? 'white' : '333'};
-  background-color: ${props.primary ? '#1ea7fd' : 'transparent'};
-  box-shadow: ${props.primary ? 'none' : 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset'};
-  ${setButtonSizeStyles(props.size)};
+  color: ${(props) => (props.primary ? 'white' : '333')};
+  background-color: ${(props) => (props.primary ? '#1ea7fd' : 'transparent')};
+  box-shadow: ${(props) => (props.primary ? 'none' : 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset')};
+  ${(props) => setButtonSizeStyles(props.size)}
 `
