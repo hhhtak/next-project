@@ -1,10 +1,21 @@
 import type { NextPage } from 'next'
+import fetch from 'node-fetch'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const res = await fetch('')
+  const users = await res.json()
+  return {
+    props: {
+      users,
+    },
+  }
+}
+
+const Home: NextPage = (props) => {
   return (
     <div className={styles.container}>
       <Head>
