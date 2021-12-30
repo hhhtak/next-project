@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
-import fetch from 'node-fetch'
+import { getUsers } from '@useCase/usersUseCase'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export async function getStaticProps() {
-  const res = await fetch('')
+  const res = await getUsers()
   const users = await res.json()
   return {
     props: {
