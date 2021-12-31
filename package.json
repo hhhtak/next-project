@@ -18,6 +18,7 @@
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/src/pages/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/interface/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/**/*.stories.{js,jsx,ts,tsx}",
       "!<rootDir>/**/*.d.ts",
       "!<rootDir>/**/node_modules/**"
