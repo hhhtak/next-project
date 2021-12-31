@@ -28,7 +28,8 @@
       "^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$": "<rootDir>/__mocks__/fileMock.js",
       "^@components/(.*)$": "<rootDir>/src/components/$1",
       "^@assets/(.*)$": "<rootDir>/src/assets/$1",
-      "^@useCase/(.*)$": "<rootDir>/src/useCase/$1"
+      "^@useCase/(.*)$": "<rootDir>/src/useCase/$1",
+      "^@types/(.*)$": "<rootDir>/src/types/$1"
     },
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": [
