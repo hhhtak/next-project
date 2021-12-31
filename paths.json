@@ -5,7 +5,7 @@
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
       "@useCase/*": ["./useCase/*"],
-      "@types/*": ["./types/*"]
+      "@interface/*": ["./interface/*"]
     }
   }
 }

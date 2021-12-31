@@ -10,7 +10,7 @@ module.exports = {
       '@components': path.resolve(__dirname, '../src/components'),
       '@assets': path.resolve(__dirname, '../src/assets'),
       '@useCase': path.resolve(__dirname, '../src/useCase'),
-      '@types': path.resolve(__dirname, '../src/types'),
+      '@interface': path.resolve(__dirname, '../src/interface'),
     }
     return config
   },
