@@ -4,11 +4,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
-import { user } from '@interface/user'
+import { User } from '@interface/user'
 
 export async function getStaticProps() {
   const res = await getUsers()
-  const users: user[] = await res.json()
+  const users: User[] = await res.json()
   return {
     props: {
       users,
@@ -17,7 +17,7 @@ export async function getStaticProps() {
 }
 
 type Props = {
-  users: user[]
+  users: User[]
 }
 
 const Home: NextPage<Props> = (props: Props) => {
