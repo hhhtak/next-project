@@ -5,7 +5,8 @@
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
       "@useCase/*": ["./useCase/*"],
-      "@interface/*": ["./interface/*"]
+      "@interface/*": ["./interface/*"],
+      "@api/*": ["./pages/api/*"]
     }
   }
 }

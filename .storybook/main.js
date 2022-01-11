@@ -11,6 +11,7 @@ module.exports = {
       '@assets': path.resolve(__dirname, '../src/assets'),
       '@useCase': path.resolve(__dirname, '../src/useCase'),
       '@interface': path.resolve(__dirname, '../src/interface'),
+      '@api': path.resolve(__dirname, '../src/pages/api'),
     }
     return config
   },
