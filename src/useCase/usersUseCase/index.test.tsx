@@ -1,7 +1,5 @@
 import nock from 'nock'
 import fetch from 'node-fetch'
-import httpMocks from 'node-mocks-http'
-import fetchMock from 'jest-fetch-mock'
 import { getUsers } from '@useCase/usersUseCase'
 import { User } from '@interface/user'
 
