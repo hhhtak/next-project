@@ -1,18 +1,12 @@
+import nock from 'nock'
+import fetch from 'node-fetch'
+import httpMocks from 'node-mocks-http'
 import fetchMock from 'jest-fetch-mock'
 import { getUsers } from '@useCase/usersUseCase'
 import { User } from '@interface/user'
 
 describe('testing UseCase', () => {
-  const OLD_ENV = process.env
-
-  beforeEach(() => {
-    fetchMock.resetMocks()
-    process.env = { ...OLD_ENV }
-  })
-
-  afterAll(() => {
-    process.env = OLD_ENV
-  })
+  ;(globalThis as any).fetch = fetch
 
   const mockData: User[] = [
     {
@@ -25,14 +19,11 @@ describe('testing UseCase', () => {
   ]
 
   it('calls google and returns data to me', async () => {
-    process.env.API_URL = 'hogehoge'
-    fetchMock.mockResponseOnce(JSON.stringify({ data: '12345' }))
+    process.env.API_URL = 'http://api.com'
 
-    //assert on the response
-    fetchMock.mockResponseOnce(() => getUsers().then((res) => JSON.stringify(mockData)))
-    // const res = await getUsers()
-    // expect(res.data).toEqual('12345')
+    nock(process.env.API_URL).get('/users').reply(200, mockData)
+    const response = await getUsers()
 
-    expect(fetchMock.mock.calls.length).toEqual(0)
+    expect(response.status).toEqual(200)
   })
 })
