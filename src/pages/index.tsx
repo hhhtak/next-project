@@ -21,6 +21,7 @@ type Props = {
 }
 
 const Home: NextPage<Props> = (props: Props) => {
+  console.log('props:', props)
   return (
     <div className={styles.container}>
       <Head>
