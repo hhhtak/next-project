@@ -9,7 +9,7 @@
     "lint": "next lint --dir src",
     "clean": "rm -r ./node_modules",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./src",
     "build-storybook": "build-storybook",
     "jest": "jest",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --setupFiles ./setupFile.js --coverage --watchAll=false"
