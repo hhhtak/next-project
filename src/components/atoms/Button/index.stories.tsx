@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react'
 
-import { Button, ButtonProps } from './index'
+import Button, { ButtonProps } from './index'
 
 export default {
   title: 'atoms/Button',

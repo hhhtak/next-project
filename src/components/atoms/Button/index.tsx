@@ -12,7 +12,7 @@ export type ButtonProps = {
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const { primary = false, size = 'medium', backgroundColor, children, ...otherProps } = props
 
   return (
@@ -21,3 +21,5 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     </StyledButton>
   )
 }
+
+export default Button
