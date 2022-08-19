@@ -17,11 +17,11 @@ const customJestConfig = {
     '!<rootDir>/**/node_modules/**',
   ],
   moduleNameMapper: {
-    '^@/components/(.*)$': '<rootDir>/src/components/$1',
-    '^@/assets/(.*)$': '<rootDir>/src/assets/$1',
-    '^@/useCase/(.*)$': '<rootDir>/src/useCase/$1',
-    '^@/interface/(.*)$': '<rootDir>/src/interface/$1',
-    '^@/api/(.*)$': '<rootDir>/src/pages/api/$1',
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@assets/(.*)$': '<rootDir>/src/assets/$1',
+    '^@useCase/(.*)$': '<rootDir>/src/useCase/$1',
+    '^@interface/(.*)$': '<rootDir>/src/interface/$1',
+    '^@api/(.*)$': '<rootDir>/src/pages/api/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
 }
