@@ -1,6 +1,6 @@
 {
-  "extends": "./paths.json",
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -17,7 +17,14 @@
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./components/*"],
+      "@useCase/*": ["./useCase/*"],
+      "@interface/*": ["./interface/*"],
+      "@api/*": ["./pages/api/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
