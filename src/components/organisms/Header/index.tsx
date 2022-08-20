@@ -5,16 +5,16 @@ import {
   StyledWrapper,
   StyledSvg,
 } from '@components/organisms/Header/styled'
-import { Button } from '@components/atoms/Button'
+import Button from '@components/atoms/Button'
 
-type HeaderProps = {
+export type Props = {
   user?: {}
   onLogin: () => void
   onLogout: () => void
   onCreateAccount: () => void
 }
 
-export const Header: React.FC<HeaderProps> = (props) => {
+const Header: React.FC<Props> = (props: Props) => {
   const { user, onLogin, onLogout, onCreateAccount } = props
 
   return (
@@ -59,3 +59,5 @@ export const Header: React.FC<HeaderProps> = (props) => {
     </header>
   )
 }
+
+export default Header

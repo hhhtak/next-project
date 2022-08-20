@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro'
-import { Button } from '@components/atoms/Button'
+import styled from 'styled-components'
+import Button from '@components/atoms/Button'
 
 export const StyledWrapper = styled.div`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;

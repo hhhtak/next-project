@@ -10,8 +10,7 @@ describe('Button Component', () => {
 
   it('childrenに渡した値が正しく表示されていること', () => {
     const { container } = render(<Button {...mockProps} />)
-    screen.debug()
-    expect(screen.getByText(text)).toBeTruthy()
+    expect(screen.getByText(text)).toBeTruthy
     expect(container.getElementsByClassName(buttonSize)).toBeTruthy()
   })
 
@@ -32,7 +31,6 @@ describe('Button Component', () => {
   it('props.primary:true場合、largeが設定されること', () => {
     const props: ButtonProps = { ...mockProps, primary: true }
     const { container } = render(<Button {...props} />)
-    console.log(container.firstChild)
     expect(container.firstChild).toHaveStyleRule('color', 'white', {})
     expect(container.firstChild).toHaveStyleRule('background-color', '#1ea7fd', {})
     expect(container.firstChild).toHaveStyleRule('box-shadow', 'none', {})
