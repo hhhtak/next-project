@@ -1,17 +1,12 @@
-import { render } from '@testing-library/react'
-import { composeStories } from '@storybook/testing-react'
-import * as stories from '@components/Page/index.stories'
+import { render, screen } from '@testing-library/react'
+import Page, { Props } from '@components/Page'
 
-const { LoggedIn, LoggedOut } = composeStories(stories)
+describe('Page Component', () => {
+  const mockProps: Props = { onLogin: jest.fn(), onLogout: jest.fn(), onCreateAccount: jest.fn() }
 
-test('LoggedIn storybook test', () => {
-  const { getByText } = render(<LoggedIn />)
-  const text = getByText('Log out')
-  expect(text).not.toBeNull()
-})
-
-test('LoggedOut storybook test', () => {
-  const { getByText } = render(<LoggedOut />)
-  const text = getByText('Log in')
-  expect(text).not.toBeNull()
+  it('Pageコンポーネントが表示されること', () => {
+    const h2Text = 'Pages in Storybook'
+    render(<Page {...mockProps} />)
+    expect(screen.findByText(h2Text)).toBeTruthy()
+  })
 })

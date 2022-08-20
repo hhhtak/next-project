@@ -1,15 +1,15 @@
 import React from 'react'
 import { StyledSection, StyledH2, StyledTip, StyledTipWrapper } from '@components/Page/styled'
-import { Header } from '@components/organisms/Header'
+import Header from '@components/organisms/Header'
 
-type PageProps = {
+export type Props = {
   user?: {}
   onLogin: () => void
   onLogout: () => void
   onCreateAccount: () => void
 }
 
-export const Page: React.FC<PageProps> = (props: PageProps) => {
+const Page: React.FC<Props> = (props: Props) => {
   const { user, onLogin, onLogout, onCreateAccount } = props
 
   return (
@@ -68,3 +68,5 @@ export const Page: React.FC<PageProps> = (props: PageProps) => {
     </article>
   )
 }
+
+export default Page

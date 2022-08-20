@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyledButton, ButtonSize } from '@components/atoms/Button/styled'
 
-export type ButtonProps = {
+export type Props = {
   primary?: boolean
   backgroundColor?: string
   size?: ButtonSize
@@ -12,7 +12,7 @@ export type ButtonProps = {
 /**
  * Primary UI component for user interaction
  */
-const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+const Button: React.FC<Props> = (props: Props) => {
   const { primary = false, size = 'medium', backgroundColor, children, ...otherProps } = props
 
   return (
