@@ -1,7 +1,7 @@
 import nock from 'nock'
 import fetch from 'node-fetch'
 import { getUsers } from '@repository/usersRepository'
-import { User } from '@interface/user'
+import { User } from '@repository/usersRepository/interface'
 
 describe('testing UseCase', () => {
   ;(globalThis as any).fetch = fetch

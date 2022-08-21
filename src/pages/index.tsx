@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
-import { getUsers } from '@repository/usersRepository'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
-import { User } from '@interface/user'
+import { getUsers } from '@repository/usersRepository'
+import { User } from '@repository/usersRepository/interface'
 
 export async function getStaticProps() {
   const res = await getUsers()

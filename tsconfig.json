@@ -22,7 +22,6 @@
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
       "@repository/*": ["./repository/*"],
-      "@interface/*": ["./interface/*"],
       "@api/*": ["./pages/api/*"]
     }
   },

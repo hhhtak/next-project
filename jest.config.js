@@ -20,7 +20,6 @@ const customJestConfig = {
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@assets/(.*)$': '<rootDir>/src/assets/$1',
     '^@repository/(.*)$': '<rootDir>/src/repository/$1',
-    '^@interface/(.*)$': '<rootDir>/src/interface/$1',
     '^@api/(.*)$': '<rootDir>/src/pages/api/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
