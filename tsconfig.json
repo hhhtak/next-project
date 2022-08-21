@@ -21,7 +21,7 @@
     "paths": {
       "@assets/*": ["./assets/*"],
       "@components/*": ["./components/*"],
-      "@useCase/*": ["./useCase/*"],
+      "@repository/*": ["./repository/*"],
       "@interface/*": ["./interface/*"],
       "@api/*": ["./pages/api/*"]
     }

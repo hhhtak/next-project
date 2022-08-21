@@ -1,6 +1,6 @@
 import nock from 'nock'
 import fetch from 'node-fetch'
-import { getUsers } from '@useCase/usersUseCase'
+import { getUsers } from '@repository/usersRepository'
 import { User } from '@interface/user'
 
 describe('testing UseCase', () => {
