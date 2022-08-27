@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react'
 
-import Button, { ButtonProps } from '@components/atoms/Button'
+import Button, { Props } from '@components/atoms/Button'
 
 export default {
   title: 'atoms/Button',
@@ -11,7 +11,7 @@ export default {
   },
 } as Meta
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />
+const Template: Story<Props> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
@@ -45,7 +45,7 @@ export const StoryWithLocale: Story = (args, { globals: { locale } }) => {
   return <Button {...args}>{caption}</Button>
 }
 
-export const StoryWithParamsAndDecorator: Story<ButtonProps> = (args) => {
+export const StoryWithParamsAndDecorator: Story<Props> = (args) => {
   return <Button {...args} />
 }
 StoryWithParamsAndDecorator.args = {

@@ -7,10 +7,11 @@ module.exports = {
     config.resolve.modules = [path.resolve(__dirname, '..'), 'node_modules']
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@components': path.resolve(__dirname, '../src/components'),
-      '@assets': path.resolve(__dirname, '../src/assets'),
-      '@repository': path.resolve(__dirname, '../src/repository'),
       '@api': path.resolve(__dirname, '../src/pages/api'),
+      '@assets': path.resolve(__dirname, '../src/assets'),
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@pages': path.resolve(__dirname, '../src/pages'),
+      '@repository': path.resolve(__dirname, '../src/repository'),
     }
     return config
   },
