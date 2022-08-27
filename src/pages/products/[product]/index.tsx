@@ -8,33 +8,29 @@ import {
   useState,
 } from 'react'
 import { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../../../styles/Home.module.css'
-
-type CountState = {
-  count: number
-  setCount: Dispatch<SetStateAction<number>>
-}
 
 type Props = {
   children: React.ReactNode
 }
 
-const countContext = createContext<CountState>({
-  count: 0,
-  setCount: () => undefined,
-})
+// コンテキストは値と設定する関数を分けて作る
+const countContext = createContext<number>(0)
+const setCountContext = createContext<Dispatch<SetStateAction<number>>>(() => undefined)
 
+// Providerはpropsを使用して子コンポーネントで受け取る
 const CountProvider: FC<Props> = (props: Props) => {
   const { children } = props
   const [count, setCount] = useState<number>(0)
 
-  return <countContext.Provider value={{ count, setCount }}>{children}</countContext.Provider>
+  return (
+    <countContext.Provider value={count}>
+      <setCountContext.Provider value={setCount}>{children}</setCountContext.Provider>
+    </countContext.Provider>
+  )
 }
 
-const useCountValue = () => useContext(countContext).count
-const useCountSetValue = () => useContext(countContext).setCount
+const useCountValue = () => useContext(countContext)
+const useCountSetValue = () => useContext(setCountContext)
 
 const Button = () => {
   console.log('render button')
