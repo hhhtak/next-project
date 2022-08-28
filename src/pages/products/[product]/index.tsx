@@ -1,10 +1,9 @@
-import { createContext, Dispatch, FC, SetStateAction, useContext, useState } from 'react'
+import { FC, useState } from 'react'
 import { NextPage } from 'next'
 import ContextButton from '@components/atoms/ContextButton'
 import DisplayCount from '@components/atoms/DisplayCount'
 import OtherComponent from '@components/atoms/OtherComponent'
-import { countContext } from '@providers/count'
-import { setCountContext } from '@providers/setCount'
+import { countContext, setCountContext } from '@providers/count'
 
 type Props = {
   children: React.ReactNode
