@@ -11,6 +11,7 @@ module.exports = {
       '@assets': path.resolve(__dirname, '../src/assets'),
       '@components': path.resolve(__dirname, '../src/components'),
       '@pages': path.resolve(__dirname, '../src/pages'),
+      '@providers': path.resolve(__dirname, '../src/providers'),
       '@repository': path.resolve(__dirname, '../src/repository'),
     }
     return config

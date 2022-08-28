@@ -3,16 +3,12 @@ import { NextPage } from 'next'
 import ContextButton from '@components/atoms/ContextButton'
 import DisplayCount from '@components/atoms/DisplayCount'
 import OtherComponent from '@components/atoms/OtherComponent'
+import { countContext } from '@providers/count'
+import { setCountContext } from '@providers/setCount'
 
 type Props = {
   children: React.ReactNode
 }
-
-// コンテキストは値と設定する関数を分けて作る
-const countContext = createContext<number>(0)
-const setCountContext = createContext<Dispatch<SetStateAction<number>>>(() => undefined)
-export const useCountValue = () => useContext(countContext)
-export const useCountSetValue = () => useContext(setCountContext)
 
 // Providerはpropsを使用して子コンポーネントで受け取る
 const ProductProvider: FC<Props> = (props: Props) => {

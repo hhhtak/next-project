@@ -1,5 +1,5 @@
 import { FC, useCallback } from 'react'
-import { useCountSetValue } from '@pages/products/[product]'
+import { useCountSetValue } from '@providers/setCount'
 import { StyledWrapper } from '@components/atoms/ContextButton/styled'
 
 const ContextButton: FC = () => {
