@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useCountValue } from '@pages/products/[product]'
+import { useCountValue } from '@providers/count'
 
 const DisplayCount: FC = () => {
   console.log('render カウント')
