@@ -13,6 +13,7 @@ module.exports = {
       '@pages': path.resolve(__dirname, '../src/pages'),
       '@providers': path.resolve(__dirname, '../src/providers'),
       '@repository': path.resolve(__dirname, '../src/repository'),
+      '@hooks': path.resolve(__dirname, '../src/hooks'),
     }
     return config
   },

@@ -45,6 +45,7 @@
     "jest": "^27.5.1",
     "jest-styled-components": "^7.1.0",
     "jest-watch-typeahead": "1.1.0",
+    "next-intercept-stdout": "^1.0.1",
     "nock": "^13.2.4",
     "prettier": "^2.6.2",
     "react-scripts": "^5.0.1",

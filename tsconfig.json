@@ -24,7 +24,8 @@
       "@pages/*": ["./pages/*"],
       "@providers/*": ["./providers/*"],
       "@repository/*": ["./repository/*"],
-      "@api/*": ["./pages/api/*"]
+      "@api/*": ["./pages/api/*"],
+      "@hooks/*": ["./hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

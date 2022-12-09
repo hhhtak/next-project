@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>this is Products Page</main>
       <Link href='/products/aaaa'>
-        <a>product page link</a>
+        product page link
       </Link>
 
       <footer className={styles.footer}>
