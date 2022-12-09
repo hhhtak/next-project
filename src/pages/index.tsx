@@ -63,7 +63,7 @@ const Home: NextPage<Props> = (props: Props) => {
           </a>
         </div>
         <Link href='/products'>
-          <a>products page link</a>
+          products page link
         </Link>
       </main>
 
