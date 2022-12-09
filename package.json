@@ -21,6 +21,7 @@
     "node-mocks-http": "^1.11.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "recoil": "^0.7.6",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
