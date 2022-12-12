@@ -6,7 +6,7 @@ import {
   useSetRecoilState,
 } from 'recoil'
 
-type User = {
+export type User = {
   name: string
   height: number | null
 }

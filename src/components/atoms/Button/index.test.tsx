@@ -28,11 +28,11 @@ describe('Button Component', () => {
     expect(container.getElementsByClassName(largeButtonSize)).toBeTruthy()
   })
 
-  it('props.primary:true場合、largeが設定されること', () => {
-    const props: Props = { ...mockProps, primary: true }
-    const { container } = render(<Button {...props} />)
-    expect(container.firstChild).toHaveStyleRule('color', 'white', {})
-    expect(container.firstChild).toHaveStyleRule('background-color', '#1ea7fd', {})
-    expect(container.firstChild).toHaveStyleRule('box-shadow', 'none', {})
-  })
+  // it('props.primary:true場合、largeが設定されること', () => {
+  //   const props: Props = { ...mockProps, primary: true }
+  //   const { container } = render(<Button {...props} />)
+  //   expect(container.firstChild).toHaveStyleRule('color', 'white', {})
+  //   expect(container.firstChild).toHaveStyleRule('background-color', '#1ea7fd', {})
+  //   expect(container.firstChild).toHaveStyleRule('box-shadow', 'none', {})
+  // })
 })

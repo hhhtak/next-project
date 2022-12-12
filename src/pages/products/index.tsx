@@ -3,8 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
+import { useStateUser } from '@hooks/recoil/user'
 
 const Home: NextPage = () => {
+  const stateUser = useStateUser()
+  console.log('stateUser:', stateUser)
   return (
     <div className={styles.container}>
       <Head>
@@ -14,9 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>this is Products Page</main>
-      <Link href='/products/aaaa'>
-        product page link
-      </Link>
+      <Link href='/products/aaaa'>product page link</Link>
 
       <footer className={styles.footer}>
         <a

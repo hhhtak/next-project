@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }
 
   return (
-    <RecoilRoot {...initializeState}>
+    <RecoilRoot initializeState={initializeState}>
       <Component {...pageProps} />
     </RecoilRoot>
   )
