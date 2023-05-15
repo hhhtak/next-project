@@ -1,13 +1,5 @@
 import { RecoilRoot } from 'recoil'
 
-export const decorators = [
-  (Story) => (
-    <RecoilRoot>
-      <Story />
-    </RecoilRoot>
-  ),
-]
-
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -17,4 +9,11 @@ export const parameters = {
     },
   },
   globals: { locale: 'fr' },
+  decorators: [
+    (Story) => (
+      <RecoilRoot>
+        <Story />
+      </RecoilRoot>
+    ),
+  ],
 }
