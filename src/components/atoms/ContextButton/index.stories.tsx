@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 
 import ContextButton from '@components/atoms/ContextButton'
 
@@ -7,5 +7,7 @@ export default {
   component: ContextButton,
 } as Meta
 
-const Template: Story = () => <ContextButton />
-export const Primary = Template.bind({})
+const Template: StoryFn = () => <ContextButton />
+export const Primary = {
+  render: Template,
+}

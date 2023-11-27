@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react'
+import { StoryObj, StoryFn, Meta } from '@storybook/react'
 
 import Button, { Props } from '@components/atoms/Button'
 
@@ -11,18 +11,18 @@ export default {
   },
 } as Meta
 
-const Template: Story<Props> = (args) => <Button {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {
-  children: 'foofoo',
-  size: 'large',
-  primary: true,
+export const Primary = {
+  args: {
+    children: 'foofoo',
+    size: 'large',
+    primary: true,
+  },
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  children: 'Children coming from story args!',
+export const Secondary = {
+  args: {
+    children: 'Children coming from story args!',
+  },
 }
 
 const getCaptionForLocale = (locale: string) => {
@@ -40,18 +40,25 @@ const getCaptionForLocale = (locale: string) => {
   }
 }
 
-export const StoryWithLocale: Story = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale)
-  return <Button {...args}>{caption}</Button>
+export const StoryWithLocale: StoryObj = {
+  render: (args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale)
+    return <Button {...args}>{caption}</Button>
+  },
 }
 
-export const StoryWithParamsAndDecorator: Story<Props> = (args) => {
-  return <Button {...args} />
+export const StoryWithParamsAndDecorator: StoryObj<Props> = {
+  render: (args) => {
+    return <Button {...args} />
+  },
+
+  args: {
+    children: 'foo2',
+  },
+
+  parameters: {
+    layout: 'centered',
+  },
+
+  decorators: [(StoryFn) => <StoryFn />],
 }
-StoryWithParamsAndDecorator.args = {
-  children: 'foo2',
-}
-StoryWithParamsAndDecorator.parameters = {
-  layout: 'centered',
-}
-StoryWithParamsAndDecorator.decorators = [(StoryFn) => <StoryFn />]

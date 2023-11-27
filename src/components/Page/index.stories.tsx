@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 
 import Page from '@components/Page'
 import * as HeaderStories from '@components/organisms/Header/index.stories'
@@ -7,17 +7,17 @@ import * as HeaderStories from '@components/organisms/Header/index.stories'
 export default {
   title: 'src/Page',
   component: Page,
-} as ComponentMeta<typeof Page>
+} as Meta<typeof Page>
 
-const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />
-
-export const LoggedIn = Template.bind({})
-LoggedIn.args = {
-  // More on composing args: https://storybook.js.org/docs/react/writing-stories/args#args-composition
-  ...HeaderStories.LoggedIn.args,
+export const LoggedIn = {
+  args: {
+    // More on composing args: https://storybook.js.org/docs/react/writing-stories/args#args-composition
+    ...HeaderStories.LoggedIn.args,
+  },
 }
 
-export const LoggedOut = Template.bind({})
-LoggedOut.args = {
-  ...HeaderStories.LoggedOut.args,
+export const LoggedOut = {
+  args: {
+    ...HeaderStories.LoggedOut.args,
+  },
 }

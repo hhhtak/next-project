@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 
 import { ProfileCard, Props } from '@components/molecules/ProfileCard'
 import { User } from '@interface/user'
@@ -7,9 +7,7 @@ import { User } from '@interface/user'
 export default {
   title: 'molecules/ProfileCard',
   component: ProfileCard,
-} as ComponentMeta<typeof ProfileCard>
-
-const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />
+} as Meta<typeof ProfileCard>
 
 const mockUser: User = {
   id: 11111,
@@ -19,7 +17,8 @@ const mockUser: User = {
   address: 'hogehoge',
 }
 
-export const Default = Template.bind({})
-Default.args = {
-  user: mockUser,
+export const Default = {
+  args: {
+    user: mockUser,
+  },
 }

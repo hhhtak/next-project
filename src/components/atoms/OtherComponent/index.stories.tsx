@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 
 import OtherComponent from '@components/atoms/OtherComponent'
 
@@ -7,5 +7,7 @@ export default {
   component: OtherComponent,
 } as Meta
 
-const Template: Story = () => <OtherComponent />
-export const Primary = Template.bind({})
+const Template: StoryFn = () => <OtherComponent />
+export const Primary = {
+  render: Template,
+}

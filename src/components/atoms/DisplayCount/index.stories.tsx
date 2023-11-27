@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 
 import DisplayCount from '@components/atoms/DisplayCount'
 
@@ -7,5 +7,7 @@ export default {
   component: DisplayCount,
 } as Meta
 
-const Template: Story = () => <DisplayCount />
-export const Primary = Template.bind({})
+const Template: StoryFn = () => <DisplayCount />
+export const Primary = {
+  render: Template,
+}
