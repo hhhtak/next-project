@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export type ButtonSize = 'small' | 'medium' | 'large'
 type Props = {
-  primary: boolean
+  primary?: boolean
   size: ButtonSize
 }
 
@@ -26,8 +26,9 @@ export const StyledButton = styled.button<Props>`
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  color: ${(props) => (props.primary ? 'white' : '333')};
-  background-color: ${(props) => (props.primary ? '#1ea7fd' : 'transparent')};
-  box-shadow: ${(props) => (props.primary ? 'none' : 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset')};
-  ${(props) => setButtonSizeStyles(props.size)}
+  color: ${($props) => ($props.primary ? 'white' : '333')};
+  background-color: ${($props) => ($props.primary ? '#1ea7fd' : 'transparent')};
+  box-shadow: ${($props) =>
+    $props.primary ? 'none' : 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset'};
+  ${($props) => setButtonSizeStyles($props.size)}
 `
